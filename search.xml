@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[langley problem]]></title>
+      <url>www.dreamalbum.net/2016/08/22/langley-problem/</url>
+      <content type="html"><![CDATA[<p>几个月前在朋友圈里看到这道数学题，昨天又有朋友问我，然而我花了好长时间才搞定。就在blog里记录下来吧。</p>
+<h1 id="几何解法"><a href="#几何解法" class="headerlink" title="几何解法"></a>几何解法</h1><p> <img src="images\langley.jpg" alt="langley"></p>
+<p>如图，$\angle EBC = 70^{\circ} , \angle ABE = 10^{\circ}, \angle BCD = 60^{\circ} , \angle ACD = 20^{\circ}, \angle BED = ?$</p>
+<p>鉴于本题据说为5年级数学题，下面给出几何方法</p>
+<p> <img src="images\langley2.jpg" alt="langley2"></p>
+<p>作$\angle EBF = 10^{\circ}, BF与CD交于点G$</p>
+<p>易得$\triangle BCG$为正三角形。又$\triangle BCD\cong\triangle CBF$</p>
+<p>$BD = CF, \triangle ADF$为等腰三角形</p>
+<p>则$\triangle DFG$为正三角形。</p>
+<p>连接$AG$,$AG$为$BC$的垂直平分线。则$\angle BAG= 10^{\circ}$</p>
+<p>下面证明$\triangle BAG\cong\triangle ABE$</p>
+<p>$AB=BA, \angle BAG=\angle ABE, \angle ABG=\angle EAB\Rightarrow\triangle BAG\cong\triangle ABE$</p>
+<p>则有$BG=AE$.又$\angle BAE=\angle ABF=20^{\circ}, BF=AF$</p>
+<p>则$EF=FG=DF$</p>
+<p>$\angle EDF=(180^{\circ}-\angle EFD)/2=50^{\circ}$</p>
+<p>$\angle BED= 180^{\circ}- 10^{\circ}-150^{\circ}=20^{\circ}$</p>
+<h1 id="代数方法"><a href="#代数方法" class="headerlink" title="代数方法"></a>代数方法</h1><p>代数方法可以由正弦定理得到。</p>
+<p>$$\frac{S\triangle ADE}{S\triangle BDE}=\frac{AE\sin\angle AED}{BE\sin\angle BED}=\frac{AD}{BD}$$</p>
+<p>同理可得</p>
+<p>$$\frac{S\triangle ACD}{S\triangle BCD}=\frac{AC\sin\angle ACD}{BC\sin\angle BCD}=\frac{AD}{BD}$$</p>
+<p>两式联立，经过复杂的三角函数运算（PS：我也没有笔算出来）可得$\angle BED=20^{\circ}$.</p>
+<h1 id="推广"><a href="#推广" class="headerlink" title="推广"></a>推广</h1><p>首先是<a href="http://tieba.baidu.com/p/3132405884" target="_blank" rel="external">初步推广</a></p>
+<p>当然，以上都可以用几何方法做出。</p>
+<p>然后是<a href="http://tieba.baidu.com/p/2871387743?pid=46107485155&amp;cid=0#46107485155" target="_blank" rel="external">更深层次的推广</a></p>
+<p>可以看到，这道特殊的问题（所有角度都为有理数）的根源在于一类特殊的角，满足某种特殊的三角函数关系。</p>
+<p>事实证明代数和几何是相关的XD</p>
+<p>然后。。我的数学果然还是退步了QAQ</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[另一种音乐]]></title>
+      <url>www.dreamalbum.net/2016/08/18/%E5%8F%A6%E4%B8%80%E7%A7%8D%E9%9F%B3%E4%B9%90/</url>
+      <content type="html"><![CDATA[<p>对音乐的偏爱，大约是从高中开始的；我也和别人一样，是从Jay和其他一些歌手启蒙的。当然那个时候我还不算很感冒，就在那年周董在春晚上唱青花瓷，似乎人人都会背歌词的时候，我却一点不会。那时候我家旁边有个学校，中午经常放一些音乐；其中有一首歌我觉得很好听，但却不知道叫什么名字。后来在大学里十大歌星预选赛里有人唱了这首歌，这不一模一样嘛！”天大地大，世界比你想象中朦胧”，原来是王菲的《人间》。这大概是第一次接触Faye Wong；这歌声确实带着仙气儿。后来她在春晚上唱的《传奇》《因为爱情》，听说王菲复出，据说也是蛮轰动的。然而当时却不明白为什么王菲被称之为天后，是因为声音吗？</p>
+<p>一开始听王菲，也就是从《红豆》《流年》等等开始听；我跟室友说，这首歌也许可以称谓经典的华语流行歌曲了，就和《千千阙歌》一样。也许王菲就是这首歌奠定了天后吧。再听听她的粤语歌，《暧昧》《约定》《爱与痛的边缘》，确实是让人沉醉其中。</p>
+<p>后来。。听到的就都是电影主题曲了，《致青春》《匆匆那年》什么的。看到有人评论说王菲不行了，在消磨过去的老本。就在这时，看《我是歌手》节目，孙楠选了一首王菲的歌，《执迷不悔》。当时我吃了一惊，还有这样有意思的歌曲；马上去听了原唱，嗯，实在是比孙楠不知高到哪里去了。我想我觉得唱歌最牛逼的样子，就是在台上，弹着吉他唱《执迷不悔》。是不是像《阿甘正传》里的女主，唱着《答案在风中飘》？又听了《笑忘书》，歌名蕴含书名，歌词讲述哲理，烦恼的时候听听，确是释然了许多。</p>
+<p>最近听了王菲的《寓言》专辑，却让我有了前所未有的中毒的感觉。寒武纪初生、新房客历事、香奈儿入世、阿修罗执迷、彼岸花往生。寓言五部曲，包含了一个故事。这五首歌实在是独树一帜，叫人难以想象这是两千年的专辑。无愧于王菲、林夕、张亚东的大手笔。</p>
+<p>要说寓言五部曲，最喜欢《新房客》。</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=299589&auto=0&height=66"></iframe>
+
+<p>等待晚上<br>迎接白天<br>白天打扫<br>晚上祈祷<br>离开凡嚣<br>寻找烦恼<br>天涯海角<br>心血来潮<br>有人在吗<br>有谁来找<br>我说你好<br>你说打扰<br>不晚不早<br>千里迢迢<br>来的正好<br>哪里找<br>哪里找<br>一切很好<br>不缺烦恼<br>我见过<br>一场海啸<br>没看过<br>你的微笑<br>我捕捉过一只飞鸟<br>没摸过你的羽毛<br>要不是那个清早<br>我说你好你说打扰<br>要不是我的花草<br>开的正好<br>哪里找<br>哪里找<br>一切很好<br>不缺烦恼</p>
+<p>也不需要用溢美之词来评论这张专辑，借用豆瓣上的评论，”一场华丽的预谋”。再看现在的华语乐坛，大概再也没有这样的实验之声了吧。（或许有人说《浮躁》更前卫？我觉得《寓言》足矣）</p>
+<p>据说年底上海有演唱会，可惜身在国外，只能错过了。有缘无分啊。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[从王宝强事件说开去]]></title>
+      <url>www.dreamalbum.net/2016/08/18/%E4%BB%8E%E7%8E%8B%E5%AE%9D%E5%BC%BA%E4%BA%8B%E4%BB%B6%E8%AF%B4%E5%BC%80%E5%8E%BB/</url>
+      <content type="html"><![CDATA[<p>王宝强事件在微博上发酵已经4天了。。讲真，完全没有想到这个事件能够引起这么大的风波。一个事件要具有话题性，那这个事件的当事人也要在普通人当中作为代表。王宝强代表的大概是靠自身奋斗起家的草根阶层；而女主代表的是新时代的一部分女性（？），靠外貌被前者相中，完全依附于男性的群体。由此可见，这两种人在社会上还是占多数的。再加上偷情， 财产之类的爆料，这新闻就这么火了。</p>
+<p>当然，女主的出轨行为肯定是受到批判的。那么我们能不能从另外的角度看这件事情呢？</p>
+<p><a href="https://www.zhihu.com/question/49592050/answer/117284522" target="_blank" rel="external">现在马蓉还有什么翻盘点?<a></a></a></p>
+<p>这篇知乎的答案可以一看。总之，没有经济上的自由，如果做出了所谓”越轨“的行为，或者说基于自己的行为都会受到批判。如果femanists意识到这一点，那才算到了正路。</p>
+<p>这让我想到了奇葩说的某一期辩题是女方收入三倍于男方，该不该离婚？其实这个问题在于，如果是因为收入差距就要离婚，这观点就跟旧社会差不多。没有道理说男方一定要收入高于女方，也没有道理说女方要高于男方。窃以为持这种观点的人，也只是把老婆当做自己的附属品罢了。当然，如果是因为眼界，三观不合而离婚，那可以考虑磨合，实在不行，分开也是可以的。</p>
+<p>回到这个事件上，如果女主不需要花王宝强的钱过日子，王宝强这一抓奸，立马撇清，绝不妥协依附；这才有点像样。只是女主既无事业又无胆识，那也是不可能做到了。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[My First Words]]></title>
+      <url>www.dreamalbum.net/2016/08/16/My-First-Words/</url>
+      <content type="html"><![CDATA[<p>Hello！Welcome to Yuliang Fang‘s Website.</p>
+<p>This is a collection of my ideas and essays. Any comment is welcome.</p>
+<p>Great thanks to <a href="http://www.fredxue.com" target="_blank" rel="external">Fred Xue</a>.</p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
