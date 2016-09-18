@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="www.dreamalbum.net/"/>
-  <updated>2016-08-25T08:23:30.238Z</updated>
+  <updated>2016-09-18T06:45:08.539Z</updated>
   <id>www.dreamalbum.net/</id>
   
   <author>
@@ -16,10 +16,75 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>A Number Game</title>
+    <link href="www.dreamalbum.net/2016/09/17/A-Number-Game/"/>
+    <id>www.dreamalbum.net/2016/09/17/A-Number-Game/</id>
+    <published>2016-09-18T06:42:26.000Z</published>
+    <updated>2016-09-18T06:45:08.539Z</updated>
+    
+    <content type="html"><![CDATA[<p>暑假里来学校之前就在朋友圈里看到这道有趣的问题。。与其说是问题不如说是trick。所以我们来看正题吧。。</p>
+<p>问题是一段对话：</p>
+<p>相传鬼谷子有一天给孙膑，庞涓出了一个问题：他找了10以内的两个不同的自然数，把两数之积告诉孙膑，两数之和告诉庞涓。然后让他们猜这两个数。</p>
+<p>孙膑说：“我不知道这两个数是什么”</p>
+<p>庞涓说：“我也不知道”</p>
+<p>过了一会，孙膑说：“那我知道了”</p>
+<p>庞涓说：“那我也知道了”</p>
+<p>问：这两个数可能是多少？</p>
+<p>这道题目其实是两个不完全的信息来推断全部信息（好像不知道怎么概括了）。有点像密码学的意味。（RSA密钥似乎就是根据素数来设定的密钥？给出公钥为两数之积，私钥就是两个很大的素数，只是非常难以分解）一开始手算出了答案，然后感觉可以用编程解答。。结果这个编程一编就是十几天（想了好几次，走了好多弯路）结果发现最后简单的几行就解决了（果然并不是当码农的料）</p>
+<p>首先来分析一下这段对话</p>
+<p>由于是从1到10中间取两个不同的数，所以和的范围应该在3-19之间，积的范围在2-90之间。其实这道题目已经经过了简化，范围还是很小的。</p>
+<p>孙膑得到的两数之积，但他说无法推断出这两个数。这就说明这个积在1-10以内不止一种分解方式。像15=3*5，就只有一种分解方法，因此首先排除。</p>
+<p>庞涓得到两数之和，他也说无法推断这两个数。可能一开始看很不奇怪：和的分解方式太多了嘛。但是其实是有限定的：庞涓是在孙膑之后说的，因此庞涓的和分解出的两个数的积一定不会只有唯一一种分解方式（例如和为8，那么两个数不能是1,7和3,5，那只能是2,6了。这种情况是可以推断出来的。</p>
+<p>下面的对话类似。孙膑说我知道了，那么他可以确定这个庞涓不能确定的数是什么。这又是什么意思呢？那就是说，这个积A分解的两个数之和只有在积为这个数A的时候是不能确定的；换言之，如果和为其他数，庞涓在刚刚那一步就知道了。庞涓的对话同理：他的数B分解之积也只有在和为数B的时候是不能确定的。可能到这里头就已经晕了:)。</p>
+<p>答案是(3,8)和(5,8)。笔算是可以做出来的，但是草稿纸不在，所以也就不上了。。然后说一下程序。</p>
+<p>我以为这个题目要用图或者树之类的数据结构，还用了节点指针之类的东西。。结果发现根本没用。只需要把和vs积做成一个二维数组即可。然后根据对话的顺序筛选出可能的组合；其实这里我一开始想了很多判定的方法，什么递归啊，。。结果都没用着。只需要删除其余项就可以了。</p>
+<p>a=seton(10,10);<br>for i=1:20<br> for j=1:100</p>
+<p>  if (a(i,j)==1)&amp;&amp;(sum(a(:,j))==1) a(i,j)=0;end</p>
+<p>end;<br>end;</p>
+<p>for i=1:20<br>for j=1:100<br>if (a(i,j)==1)&amp;&amp;(sum(a(i,:))==1) a(i,j)=0;end<br>end;<br>end;</p>
+<p>for j=1:100<br>if (sum(a(:,j))&gt;1)<br>  for i=1:20<br>  a(i,j)=0;<br>end;<br>end;<br>end</p>
+<p>for i=1:20<br>if sum(a(i,:))&gt;1<br> for j=1:100<br>a(i,j)=0;<br>end;<br>end;<br>end</p>
+<p>这个程序就是分成四块，依次按照对话顺序处理所有的组合。a是一个20*100的数组，当和为i，积为j时，a(i,j)=1.然后比如第一部分，删去了可以由积直接推出和的项，第二个是在第一个基础上删去了和推出积的项。而第三个是吧如果存在已知积而在经过上面两步后还是无法确定的项删去。最后得到</p>
+<p> <img src="images\numbergame.png" alt="numbergame"></p>
+<p>正好对应(3,8)和(5,8)。</p>
+<p>看来我不是一个合格的码农。。这么简单的问题想这么久</p>
+<h2 id="问题推广"><a href="#问题推广" class="headerlink" title="问题推广"></a>问题推广</h2><p>这道问题的推广很多，也很有趣。例如：</p>
+<blockquote>
+<p>孙膑，庞涓都是鬼谷子的徒弟。一天鬼谷子出了这道题目：</p>
+<p>他从2到99中选出两个不同的整数，把积告诉孙，把和告诉庞；庞说：我虽然不能确定这两个数是什么，但是我肯定你也不知道这两个数是什么。孙说：我本来的确不知道，但是听你这么一说，我现在能够确定这两个数字了。庞说：既然你这么说，我现在也知道这两个数字是什么了。请问这两个数字是什么？为什么？</p>
+</blockquote>
+<p>这道题目看似庞涓的断言很大，孙膑的选择很多，然而只有一种结果：(4,13)。</p>
+<p>百度可以找到手算的解法，就不repo了。</p>
+<p>看到网上对这道题的讨论里有一句话“一切用编程来计算的学科都是X科学”，想笑，但这不就是所有学科的现状嘛。。现在还有手算的问题嘛。。</p>
+<p>然后有各路大神大显神通：</p>
+<p><a href="http://www.cnblogs.com/devymex/p/3329635.html" target="_blank" rel="external">甲乙两人互猜数字（鬼谷子问题）的逻辑推理与算法建模</a></p>
+<p><a href="http://www.itpub.net/thread-920630-1-1.html" target="_blank" rel="external">[原创] 用SQL解决两道难题</a></p>
+<p>哈哈，对于编程语言还是个idiot的我看了就只有目瞪狗带了。</p>
+<p>coding大法好。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;暑假里来学校之前就在朋友圈里看到这道有趣的问题。。与其说是问题不如说是trick。所以我们来看正题吧。。&lt;/p&gt;
+&lt;p&gt;问题是一段对话：&lt;/p&gt;
+&lt;p&gt;相传鬼谷子有一天给孙膑，庞涓出了一个问题：他找了10以内的两个不同的自然数，把两数之积告诉孙膑，两数之和告诉庞涓。然后让他
+    
+    </summary>
+    
+      <category term="Math" scheme="www.dreamalbum.net/categories/Math/"/>
+    
+      <category term="Coding" scheme="www.dreamalbum.net/categories/Math/Coding/"/>
+    
+    
+      <category term="number trick" scheme="www.dreamalbum.net/tags/number-trick/"/>
+    
+  </entry>
+  
+  <entry>
     <title>langley problem</title>
     <link href="www.dreamalbum.net/2016/08/22/langley-problem/"/>
     <id>www.dreamalbum.net/2016/08/22/langley-problem/</id>
-    <published>2016-08-22T11:15:31.000Z</published>
+    <published>2016-08-23T02:15:31.000Z</published>
     <updated>2016-08-25T08:23:30.238Z</updated>
     
     <content type="html"><![CDATA[<p>几个月前在朋友圈里看到这道数学题，昨天又有朋友问我，然而我花了好长时间才搞定。就在blog里记录下来吧。</p>
@@ -71,7 +136,7 @@
     <title>另一种音乐</title>
     <link href="www.dreamalbum.net/2016/08/18/%E5%8F%A6%E4%B8%80%E7%A7%8D%E9%9F%B3%E4%B9%90/"/>
     <id>www.dreamalbum.net/2016/08/18/另一种音乐/</id>
-    <published>2016-08-18T13:25:16.000Z</published>
+    <published>2016-08-19T04:25:16.000Z</published>
     <updated>2016-08-21T09:57:09.484Z</updated>
     
     <content type="html"><![CDATA[<p>对音乐的偏爱，大约是从高中开始的；我也和别人一样，是从Jay和其他一些歌手启蒙的。当然那个时候我还不算很感冒，就在那年周董在春晚上唱青花瓷，似乎人人都会背歌词的时候，我却一点不会。那时候我家旁边有个学校，中午经常放一些音乐；其中有一首歌我觉得很好听，但却不知道叫什么名字。后来在大学里十大歌星预选赛里有人唱了这首歌，这不一模一样嘛！”天大地大，世界比你想象中朦胧”，原来是王菲的《人间》。这大概是第一次接触Faye Wong；这歌声确实带着仙气儿。后来她在春晚上唱的《传奇》《因为爱情》，听说王菲复出，据说也是蛮轰动的。然而当时却不明白为什么王菲被称之为天后，是因为声音吗？</p>
@@ -105,7 +170,7 @@
     <title>从王宝强事件说开去</title>
     <link href="www.dreamalbum.net/2016/08/18/%E4%BB%8E%E7%8E%8B%E5%AE%9D%E5%BC%BA%E4%BA%8B%E4%BB%B6%E8%AF%B4%E5%BC%80%E5%8E%BB/"/>
     <id>www.dreamalbum.net/2016/08/18/从王宝强事件说开去/</id>
-    <published>2016-08-18T00:36:26.000Z</published>
+    <published>2016-08-18T15:36:26.000Z</published>
     <updated>2016-08-18T02:07:28.872Z</updated>
     
     <content type="html"><![CDATA[<p>王宝强事件在微博上发酵已经4天了。。讲真，完全没有想到这个事件能够引起这么大的风波。一个事件要具有话题性，那这个事件的当事人也要在普通人当中作为代表。王宝强代表的大概是靠自身奋斗起家的草根阶层；而女主代表的是新时代的一部分女性（？），靠外貌被前者相中，完全依附于男性的群体。由此可见，这两种人在社会上还是占多数的。再加上偷情， 财产之类的爆料，这新闻就这么火了。</p>
@@ -133,7 +198,7 @@
     <title>My First Words</title>
     <link href="www.dreamalbum.net/2016/08/16/My-First-Words/"/>
     <id>www.dreamalbum.net/2016/08/16/My-First-Words/</id>
-    <published>2016-08-15T16:49:49.000Z</published>
+    <published>2016-08-16T07:49:49.000Z</published>
     <updated>2016-08-17T03:04:48.913Z</updated>
     
     <content type="html"><![CDATA[<p>Hello！Welcome to Yuliang Fang‘s Website.</p>
